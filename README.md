@@ -68,7 +68,7 @@ To use or deploy the project, users must first compile and deploy the smart cont
 
 The front-end interface, developed with **React.js**, allows users to interact with the smart contract through a web browser. After installing the required dependencies and starting the application, users can connect their **MetaMask** wallet to the same blockchain network used for deployment. Once connected, the user will be able to upload images to **IPFS**, grant or revoke access permissions to other users, and view shared images securely within the web interface.
 
-In future stages, IPFS integration will be enhanced using **Pinata API keys** for decentralized storage management. The front end will also support direct uploading of images and retrieving data from IPFS dynamically. The final version of the project will be tested and deployed on the **Ethereum Sepolia Testnet**, ensuring that all core components — smart contract, storage, and user interface — work seamlessly together.
+In future stages, IPFS integration will be enhanced using **Pinata API keys** for decentralized storage management. The front end will also support direct uploading of images and retrieving data from IPFS dynamically. The final version of the project will be tested and deployed on the **Ethereum Sepolia Testnet**, ensuring that all core components smart contract, storage, and user interface work seamlessly together.
 
 ---
 
