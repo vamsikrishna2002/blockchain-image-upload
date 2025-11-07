@@ -96,6 +96,53 @@ The contract can be compiled and deployed using Hardhat, and a deployment script
 Scalable Design for Future Work:
 The contract structure and comments are written clearly to allow for future additions such as file encryption, metadata handling, and transaction cost analysis.
 
+---
+
+### Function Signatures / Interfaces
+
+Below are the main **function declarations (signatures)** used in this draft contract:
+
+| Function                                                                       | Description                                                                      |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| `function add(address user, string memory url) external`                       | Records an uploaded image’s IPFS hash or URL for the given user.                 |
+| `function allow(address user) external`                                        | Grants access permission to another user’s address.                              |
+| `function disallow(address user) external`                                     | Revokes a user’s previously granted access.                                      |
+| `function hasAccess(address owner, address viewer) public view returns (bool)` | Checks whether a specific viewer is authorized to view the owner’s files.        |
+| `function display(address user) external view returns (string[] memory)`       | Returns the list of image URLs that a viewer can access from a particular owner. |
+
+These interfaces define how the **front-end (React + Ethers.js)** will later interact with the contract on the Ethereum blockchain.
+
+---
+
+### High-Level Comments Explaining Functionality
+
+Each component of the smart contract is clearly documented within the Solidity file using block comments.
+The following summarizes the contract’s structure and the role of each part:
+
+* **Struct `File`:**
+  Defines the structure for storing each uploaded file’s IPFS URL and the owner’s address.
+
+* **Mappings:**
+
+  * `mapping(address => File[]) userFiles;` — Stores the list of all files uploaded by each user.
+  * `mapping(address => mapping(address => bool)) accessList;` — Records which users have access to another user’s uploads.
+
+* **Function `add`:**
+  Lets users upload images by linking their wallet address with an IPFS hash or URL.
+
+* **Function `allow` / `disallow`:**
+  Manage sharing permissions dynamically without needing any centralized authority.
+
+* **Function `hasAccess`:**
+  Ensures that only authorized users can view private uploads, adding a security layer.
+
+* **Function `display`:**
+  Returns the complete list of accessible image URLs for a viewer who has permission.
+
+---
+
+
+
 
 ---
 
