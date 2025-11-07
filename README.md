@@ -59,6 +59,20 @@ It ensures transparency, security, and verifiable ownership of uploaded files.
 
 ---
 
+
+## How to Use or Deploy
+
+This project is currently in its **prototype stage**, with the Solidity smart contract and front-end structure already established. The goal of this draft version is to demonstrate the basic functionality of the system — how users will upload images, manage permissions, and view files through a decentralized blockchain-based interface. Full integration between the smart contract, IPFS, and the React front end will be completed in later milestones.
+
+To use or deploy the project, users must first compile and deploy the smart contract using **Hardhat**. This is done by opening the terminal, navigating to the project folder, and running the necessary commands to compile and deploy the contract to a local blockchain or Ethereum test network. Once deployed, Hardhat provides a contract address in the terminal, which will later be used in the front-end code (`App.js`) to connect the web application to the blockchain network.
+
+The front-end interface, developed with **React.js**, allows users to interact with the smart contract through a web browser. After installing the required dependencies and starting the application, users can connect their **MetaMask** wallet to the same blockchain network used for deployment. Once connected, the user will be able to upload images to **IPFS**, grant or revoke access permissions to other users, and view shared images securely within the web interface.
+
+In future stages, IPFS integration will be enhanced using **Pinata API keys** for decentralized storage management. The front end will also support direct uploading of images and retrieving data from IPFS dynamically. The final version of the project will be tested and deployed on the **Ethereum Sepolia Testnet**, ensuring that all core components — smart contract, storage, and user interface — work seamlessly together.
+
+---
+
+
 ## Draft Smart Contract
 The draft Solidity smart contract Upload.sol is the core part of the system that manages the image upload, sharing, and access control process on the Ethereum blockchain. It is designed as an early prototype to demonstrate how ownership and permissions will be recorded in a decentralized manner.
 
