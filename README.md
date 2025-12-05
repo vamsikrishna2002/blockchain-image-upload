@@ -166,25 +166,6 @@ This project implements a comprehensive **decentralized image storage and sharin
    vercel --prod
 ```
 
-
-##  Comparison with Traditional Systems
-
-| Feature | Blockchain Solution | Traditional Cloud |
-|---------|-------------------|-------------------|
-| **Data Ownership** | Complete user control | Platform controlled |
-| **Transparency** | Immutable audit trails | Opaque operations |
-| **Single Point Failure** | Distributed resilience | Central server risks |
-| **Censorship Resistance** | Decentralized by design | Platform dependent |
-| **Privacy** | Cryptographic protection | Third-party access |
-| **Vendor Lock-in** | Open standards | Proprietary systems |
-| **Global Accessibility** | IPFS distribution | CDN dependent |
-| **Cost Predictability** | Transparent pricing | Variable subscription fees |
-
-
-##  Contributing
-
-We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
 ### **Development Setup**
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
