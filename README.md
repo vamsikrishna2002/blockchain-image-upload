@@ -333,7 +333,7 @@ const displayFiles = async (ownerAddress) => {
 - [ ] Protocol standardization contributions
 - [ ] Community-driven feature development
 
-## 📚 Research & Publications
+##  Research & Publications
 
 ### **Academic Contributions**
 - **IEEE Conference Paper**: "Blockchain-Based Image Upload and Sharing System"
