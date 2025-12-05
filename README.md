@@ -366,9 +366,7 @@ We welcome contributions from the community! Please read our [Contributing Guide
 - Performance optimization
 - Cross-platform compatibility
 
-##  License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ##  Team Members
 
