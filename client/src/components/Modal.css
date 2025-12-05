@@ -1,0 +1,134 @@
+/* Modal overlay */
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Container: flexible height, centered, responsive */
+.modalContainer {
+  width: 500px;
+  max-width: calc(100vw - 40px);
+  max-height: 80vh;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: auto;
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Close button area (if used in future) */
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px; /* sensible default */
+  cursor: pointer;
+}
+
+/* Body: center inputs and content */
+.modalContainer .body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+/* Footer: buttons row */
+.modalContainer .footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.modalContainer .footer button {
+  min-width: 90px;
+  height: 36px;
+  margin: 4px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 12px;
+}
+.modalContainer .footer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cancel override */
+#cancelBtn {
+  background-color: crimson;
+}
+
+/* Input (address) and select */
+.address {
+  display: block;
+  margin: 0 auto;
+  height: 34px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+select#selectNumber {
+  width: 100%;
+  max-width: 420px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* focus style */
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.12);
+  border-color: #009ffd;
+}
+
+.modalContainer .title {
+  color: #000;
+}
+
+.modalContainer input[type="text"] {
+  color: #000 !important;
+  background: #fff !important;
+  border: 1px solid #ccc;
+}
+
+.modalContainer input[type="text"]::placeholder {
+  color: #555 !important;
+}
