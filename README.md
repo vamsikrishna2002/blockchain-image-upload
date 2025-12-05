@@ -102,7 +102,7 @@ contract ImageStorage {
 
 1. **Clone the repository**
 ```bash
-   git clone https://github.com/your-username/blockchain-image-upload
+   git clone https://github.com/vamsikrishna2002/blockchain-image-upload
    cd blockchain-image-upload
 ```
 
