@@ -53,43 +53,6 @@ This project implements a comprehensive **decentralized image storage and sharin
    - Content addressing and redundancy
    - Cryptographic verification
 
-##  Technical Specifications
-
-### **Smart Contract Functions**
-```solidity
-contract ImageStorage {
-    // Core Functions
-    function addFile(string memory ipfsHash, string memory fileName) external
-    function displayFiles(address owner) external view returns (string[] memory)
-    function grantAccess(address user, string memory accessLevel) external
-    function revokeAccess(address user) external
-    function checkPermission(address owner, address viewer) external view returns (bool)
-    function deleteFile(string memory ipfsHash) external
-    function transferOwnership(string memory ipfsHash, address newOwner) external
-    
-    // Events
-    event FileAdded(address indexed owner, string indexed ipfsHash, uint256 timestamp)
-    event PermissionGranted(address indexed owner, address indexed user, uint256 timestamp)
-    event PermissionRevoked(address indexed owner, address indexed user, uint256 timestamp)
-}
-```
-
-### **Performance Metrics**
-- **File Upload Time**: 3.2 seconds average (including validation, IPFS storage, and blockchain confirmation)
-- **IPFS Hash Generation**: 1.8 seconds for typical image files (100KB-10MB)
-- **Blockchain Confirmation**: 15 seconds average, optimized to 8-12 seconds during off-peak
-- **UI Response Time**: Sub-100ms for all interactive components
-- **Concurrent Users**: Supports 10,000+ with appropriate scaling
-- **Storage Efficiency**: 35% reduction through IPFS deduplication
-- **System Uptime**: 99.8% reliability across distributed infrastructure
-
-### **Gas Cost Analysis**
-- **File Addition**: 85,000 gas units (optimized from initial 120,000)
-- **Permission Management**: 45,000-65,000 units depending on complexity
-- **File Access**: 25,000-35,000 units
-- **Ownership Transfer**: 40,000-50,000 units
-- **Batch Operations**: 40% cost reduction through transaction batching
-
 ##  Installation & Setup
 
 ### **Prerequisites**
@@ -203,96 +166,6 @@ contract ImageStorage {
    vercel --prod
 ```
 
-##  Usage Examples
-
-### **File Upload**
-```javascript
-// Upload image to IPFS and register on blockchain
-const uploadImage = async (file) => {
-  try {
-    // Upload to IPFS
-    const ipfsHash = await uploadToIPFS(file);
-    
-    // Register on blockchain
-    const transaction = await contract.addFile(ipfsHash, file.name);
-    await transaction.wait();
-    
-    console.log('File uploaded successfully:', ipfsHash);
-  } catch (error) {
-    console.error('Upload failed:', error);
-  }
-};
-```
-
-### **Permission Management**
-```javascript
-// Grant access to another user
-const grantAccess = async (userAddress, accessLevel = 'read') => {
-  try {
-    const transaction = await contract.grantAccess(userAddress, accessLevel);
-    await transaction.wait();
-    console.log('Access granted to:', userAddress);
-  } catch (error) {
-    console.error('Permission grant failed:', error);
-  }
-};
-
-// Revoke access
-const revokeAccess = async (userAddress) => {
-  try {
-    const transaction = await contract.revokeAccess(userAddress);
-    await transaction.wait();
-    console.log('Access revoked for:', userAddress);
-  } catch (error) {
-    console.error('Permission revoke failed:', error);
-  }
-};
-```
-
-### **File Retrieval**
-```javascript
-// Display user's files
-const displayFiles = async (ownerAddress) => {
-  try {
-    const files = await contract.displayFiles(ownerAddress);
-    return files.map(hash => `https://gateway.pinata.cloud/ipfs/${hash}`);
-  } catch (error) {
-    console.error('File retrieval failed:', error);
-    return [];
-  }
-};
-```
-
-##  Security Analysis
-
-### **Attack Vector Prevention**
-- **Reentrancy Attacks**: Protected through OpenZeppelin's ReentrancyGuard
-- **Integer Overflow**: SafeMath library implementation
-- **Unauthorized Access**: Multi-layered permission verification
-- **Front-running**: Commit-reveal schemes for sensitive operations
-- **Sybil Attacks**: Stake-based participation requirements
-
-### **Security Testing Results**
-- **Penetration Testing**: 100% detection accuracy for unauthorized access attempts
-- **Smart Contract Auditing**: No critical security flaws identified
-- **Vulnerability Assessment**: Comprehensive protection against common attack vectors
-- **Access Control Verification**: Successful prevention of permission escalation attacks
-
-## Performance Benchmarks
-
-### **Scalability Metrics**
-- **Concurrent Users**: 10,000+ supported with linear performance scaling
-- **Transaction Throughput**: 50,000+ daily transactions during peak usage
-- **Storage Efficiency**: 35-50% reduction through IPFS deduplication
-- **Global Performance**: <500ms latency for international users
-- **Load Testing**: Maintains <200ms response times under 10x normal load
-
-### **Cost Analysis**
-- **Individual Users**: $2-5 monthly operational costs
-- **Small Organizations**: $50-100 monthly for 50 users
-- **Enterprise**: <$0.50 per user monthly with economies of scale
-- **Storage Costs**: 60% reduction compared to traditional cloud providers
-- **Transaction Optimization**: 40% cost reduction through batching strategies
 
 ##  Comparison with Traditional Systems
 
@@ -307,45 +180,6 @@ const displayFiles = async (ownerAddress) => {
 | **Global Accessibility** | IPFS distribution | CDN dependent |
 | **Cost Predictability** | Transparent pricing | Variable subscription fees |
 
-##  Future Roadmap
-
-### **Phase 1: Core Enhancement**
-- [ ] Mobile application development (iOS/Android)
-- [ ] Advanced privacy features (homomorphic encryption)
-- [ ] Layer 2 scaling integration (Polygon, Arbitrum)
-- [ ] Enhanced user interface with dark mode
-
-### **Phase 2: Advanced Features**
-- [ ] AI-powered content management
-- [ ] IoT device integration
-- [ ] Cross-chain interoperability
-- [ ] Collaborative editing capabilities
-
-### **Phase 3: Enterprise Solutions**
-- [ ] Regulatory compliance automation (GDPR, HIPAA)
-- [ ] Enterprise dashboard and analytics
-- [ ] API gateway for third-party integrations
-- [ ] Advanced backup and disaster recovery
-
-### **Phase 4: Ecosystem Expansion**
-- [ ] Decentralized governance implementation
-- [ ] Token-based incentive mechanisms
-- [ ] Protocol standardization contributions
-- [ ] Community-driven feature development
-
-##  Research & Publications
-
-### **Academic Contributions**
-- **IEEE Conference Paper**: "Blockchain-Based Image Upload and Sharing System"
-- **Performance Analysis**: Comprehensive scalability and cost evaluation
-- **Security Assessment**: Multi-layered protection mechanism analysis
-- **Comparative Study**: Decentralized vs. centralized storage systems
-
-### **Technical Innovations**
-- **Gas Optimization Techniques**: 29% improvement in transaction costs
-- **Hybrid Storage Architecture**: Optimal balance of cost and performance
-- **Privacy-Preserving Access Control**: Zero-knowledge proof implementation
-- **Intelligent Caching System**: 99.9% data availability with sub-second recovery
 
 ##  Contributing
 
@@ -357,15 +191,6 @@ We welcome contributions from the community! Please read our [Contributing Guide
 3. Commit changes: `git commit -m 'Add amazing feature'`
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
-
-### **Areas for Contribution**
-- Smart contract optimization
-- Frontend UI/UX improvements
-- Documentation enhancement
-- Security testing and auditing
-- Performance optimization
-- Cross-platform compatibility
-
 
 
 ##  Team Members
@@ -379,14 +204,6 @@ We welcome contributions from the community! Please read our [Contributing Guide
 | **Santhosh Kumar Bojanapally** | Security Analyst & Documentation | 1234281349 | sbojana1@asu.edu |
 
 
-
-### **External Links**
-- [Ethereum Documentation](https://ethereum.org/developers)
-- [IPFS Documentation](https://docs.ipfs.io)
-- [React.js Documentation](https://reactjs.org/docs)
-- [Hardhat Framework](https://hardhat.org/docs)
-
----
 
 ** Star this repository if you find it helpful!**
 
