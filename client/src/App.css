@@ -1,0 +1,357 @@
+/* ================================== */
+/* GLOBAL DARK BACKGROUND              */
+/* ================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(circle at 0% 0%, #1f2937 0%, #020617 55%) fixed,
+    radial-gradient(circle at 100% 100%, #020617 0%, #020617 60%) fixed;
+  color: #e5e7eb;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+/* kill legacy backgrounds */
+.bg,
+.bg2,
+.bg3 {
+  display: none;
+}
+
+/* ================================== */
+/* GLASS CARD SHELL                    */
+/* ================================== */
+
+.app-shell {
+  position: relative;
+  width: min(760px, 100%);
+  padding: 3rem 3rem 2.5rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.14), transparent 50%),
+    rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(22px);
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.8);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* gradient frame */
+.app-shell::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 210deg,
+    #38bdf8,
+    #a855f7,
+    #f97316,
+    #22c55e,
+    #38bdf8
+  );
+  opacity: 0.45;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* subtle top highlight */
+.app-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(148, 163, 184, 0.22), transparent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ================================== */
+/* HERO ICON                           */
+/* ================================== */
+
+.hero-icon-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+}
+
+.hero-icon-glow {
+  padding: 0; /* no extra border eating into the gif */
+  border-radius: 999px;
+  background: transparent; /* let the gif colors show fully */
+  box-shadow:
+    0 22px 55px rgba(37, 99, 235, 0.7),
+    0 0 0 10px rgba(15, 23, 42, 0.96);
+  animation: floatIcon 3.4s ease-in-out infinite;
+}
+
+.hero-icon {
+  width: 110px;   /* bigger */
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+/* float animation */
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ================================== */
+/* TYPOGRAPHY                         */
+/* ================================== */
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f9fafb;
+}
+
+.subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.93rem;
+  color: #9ca3af;
+}
+
+/* tech pills row */
+.tech-chips {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.6rem;
+  font-size: 0.78rem;
+}
+
+.tech-chips span {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at 0 0, rgba(55, 65, 81, 0.9), #020617);
+  color: #e5e7eb;
+}
+
+.account-line {
+  margin: 0 0 2.1rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  word-break: break-all;
+}
+
+/* ================================== */
+/* SHARE BUTTON (FLOATING)            */
+/* ================================== */
+
+.share {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: 999px;
+  border: none;
+  background: radial-gradient(circle at 0 0, #f97373, #b91c1c);
+  color: #fef2f2;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(248, 113, 113, 0.55);
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+.share:hover {
+  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.06);
+  box-shadow: 0 22px 40px rgba(248, 113, 113, 0.65);
+}
+
+/* ================================== */
+/* FORM & LAYOUT                      */
+/* ================================== */
+
+.top {
+  margin-top: 0.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================================== */
+/* BUTTONS                            */
+/* ================================== */
+
+button,
+.choose {
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+/* primary file-picker label */
+.choose {
+  display: inline-block;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #0b1120;
+  margin-right: 0.9rem;
+  box-shadow: 0 16px 34px rgba(56, 189, 248, 0.5);
+}
+
+.choose:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* upload button */
+.upload {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  box-shadow: 0 14px 32px rgba(34, 197, 94, 0.55);
+}
+
+.upload:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Get Data button */
+.get-data {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #e5e7eb;
+  margin-top: 1.8rem;
+  padding-inline: 2.6rem;
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.65);
+}
+
+.get-data:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+/* disabled */
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+}
+
+/* ================================== */
+/* INPUTS                             */
+/* ================================== */
+
+input[type="text"] {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid #374151;
+  border-radius: 999px;
+  padding: 0.75rem 1.3rem;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 440px;
+  outline: none;
+  margin-top: 1.6rem;
+}
+
+input[type="text"]::placeholder {
+  color: #6b7280;
+}
+
+input[type="text"]:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.55);
+}
+
+/* hide native file input */
+input[type="file"] {
+  display: none;
+}
+
+/* ================================== */
+/* TEXT & IMAGES                      */
+/* ================================== */
+
+.textArea {
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+/* Any IPFS images */
+.gallery-img {
+  border-radius: 14px;
+  max-width: 260px;
+  margin: 1.2rem 0.6rem 0;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* ================================== */
+/* RESPONSIVE                         */
+/* ================================== */
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 2.4rem 1.6rem 2.2rem;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.14em;
+  }
+
+  .subtitle {
+    font-size: 0.86rem;
+  }
+
+  .tech-chips {
+    font-size: 0.76rem;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+  }
+}
