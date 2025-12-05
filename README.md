@@ -74,18 +74,12 @@ This project implements a comprehensive **decentralized image storage and sharin
    npm install
 ```
 
-3. **Configure environment variables**
-```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-```
-
-4. **Compile smart contracts**
+3. **Compile smart contracts**
 ```bash
    npx hardhat compile
 ```
 
-5. **Deploy to local network**
+4. **Deploy to local network**
 ```bash
    npx hardhat node
    npx hardhat run scripts/deploy.js --network localhost
@@ -103,12 +97,7 @@ This project implements a comprehensive **decentralized image storage and sharin
    npm install
 ```
 
-3. **Configure API endpoints**
-```bash
-   # Update src/config.js with contract addresses
-```
-
-4. **Start development server**
+3. **Start development server**
 ```bash
    npm start
 ```
@@ -126,52 +115,6 @@ This project implements a comprehensive **decentralized image storage and sharin
    export const PINATA_API_KEY = process.env.REACT_APP_PINATA_API_KEY;
    export const PINATA_SECRET_KEY = process.env.REACT_APP_PINATA_SECRET_KEY;
 ```
-
-## Deployment
-
-### **Testnet Deployment (Sepolia)**
-
-1. **Configure network**
-```javascript
-   // hardhat.config.js
-   networks: {
-     sepolia: {
-       url: "https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
-       accounts: [PRIVATE_KEY]
-     }
-   }
-```
-
-2. **Deploy contracts**
-```bash
-   npx hardhat run scripts/deploy.js --network sepolia
-```
-
-3. **Update frontend configuration**
-```javascript
-   // Update contract addresses in frontend
-```
-
-### **Production Deployment**
-
-1. **Build frontend**
-```bash
-   cd client
-   npm run build
-```
-
-2. **Deploy to hosting service**
-```bash
-   # Example: Vercel deployment
-   vercel --prod
-```
-
-### **Development Setup**
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
 
 
 ##  Team Members
