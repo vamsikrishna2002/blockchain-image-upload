@@ -1,37 +1,37 @@
 # Blockchain-Based Image Upload and Sharing System
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project implements a comprehensive **decentralized image storage and sharing platform** that leverages blockchain technology, InterPlanetary File System (IPFS), and React framework to overcome the inherent limitations of conventional centralized cloud storage solutions. The system utilizes Ethereum smart contracts for secure access control and ownership management, IPFS through Pinata services for distributed file storage, and a React-based interface for seamless user interaction.
 
-## ✨ Key Features
+## Key Features
 
-### 🔐 **Security & Privacy**
+###  **Security & Privacy**
 - **Decentralized Architecture**: Eliminates single points of failure inherent in centralized systems
 - **Multi-layered Security**: Cryptographic protection at every level
 - **User Data Sovereignty**: Complete user control over data without third-party dependencies
 - **Immutable Audit Trails**: All operations recorded permanently on blockchain
 - **Zero-knowledge Authentication**: Privacy-preserving access control
 
-### 🌐 **Blockchain Integration**
+###  **Blockchain Integration**
 - **Smart Contract Logic**: Ethereum-based ownership and permission management
 - **Gas Optimization**: Efficient contract design with 85,000 gas units for file operations
 - **Event System**: Real-time updates and comprehensive audit logging
 - **MetaMask Integration**: Seamless wallet connectivity and transaction signing
 
-### 📁 **Storage System**
+### **Storage System**
 - **IPFS Network**: Distributed file storage with content addressing
 - **Pinata Services**: Enhanced reliability and redundancy
 - **Deduplication**: 35% average storage reduction through intelligent content addressing
 - **Geographic Distribution**: Global accessibility with sub-2-second retrieval times
 
-### 🎨 **User Interface**
+###  **User Interface**
 - **React Frontend**: Responsive design supporting desktop, tablet, and mobile
 - **Drag-and-Drop Upload**: Intuitive file management interface
 - **Real-time Dashboard**: Live permission management and file browser
 - **Blockchain Abstraction**: Complex operations simplified for end users
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### **Three-Tier Architecture**
 
@@ -53,7 +53,7 @@ This project implements a comprehensive **decentralized image storage and sharin
    - Content addressing and redundancy
    - Cryptographic verification
 
-## 📋 Technical Specifications
+##  Technical Specifications
 
 ### **Smart Contract Functions**
 ```solidity
@@ -90,7 +90,7 @@ contract ImageStorage {
 - **Ownership Transfer**: 40,000-50,000 units
 - **Batch Operations**: 40% cost reduction through transaction batching
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### **Prerequisites**
 - Node.js (v14 or higher)
@@ -164,7 +164,7 @@ contract ImageStorage {
    export const PINATA_SECRET_KEY = process.env.REACT_APP_PINATA_SECRET_KEY;
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### **Testnet Deployment (Sepolia)**
 
@@ -203,7 +203,7 @@ contract ImageStorage {
    vercel --prod
 ```
 
-## 🔍 Usage Examples
+##  Usage Examples
 
 ### **File Upload**
 ```javascript
@@ -263,7 +263,7 @@ const displayFiles = async (ownerAddress) => {
 };
 ```
 
-## 📊 Security Analysis
+##  Security Analysis
 
 ### **Attack Vector Prevention**
 - **Reentrancy Attacks**: Protected through OpenZeppelin's ReentrancyGuard
@@ -278,7 +278,7 @@ const displayFiles = async (ownerAddress) => {
 - **Vulnerability Assessment**: Comprehensive protection against common attack vectors
 - **Access Control Verification**: Successful prevention of permission escalation attacks
 
-## 📈 Performance Benchmarks
+## Performance Benchmarks
 
 ### **Scalability Metrics**
 - **Concurrent Users**: 10,000+ supported with linear performance scaling
@@ -294,7 +294,7 @@ const displayFiles = async (ownerAddress) => {
 - **Storage Costs**: 60% reduction compared to traditional cloud providers
 - **Transaction Optimization**: 40% cost reduction through batching strategies
 
-## 🔄 Comparison with Traditional Systems
+##  Comparison with Traditional Systems
 
 | Feature | Blockchain Solution | Traditional Cloud |
 |---------|-------------------|-------------------|
@@ -307,7 +307,7 @@ const displayFiles = async (ownerAddress) => {
 | **Global Accessibility** | IPFS distribution | CDN dependent |
 | **Cost Predictability** | Transparent pricing | Variable subscription fees |
 
-## 🔮 Future Roadmap
+##  Future Roadmap
 
 ### **Phase 1: Core Enhancement**
 - [ ] Mobile application development (iOS/Android)
@@ -347,7 +347,7 @@ const displayFiles = async (ownerAddress) => {
 - **Privacy-Preserving Access Control**: Zero-knowledge proof implementation
 - **Intelligent Caching System**: 99.9% data availability with sub-second recovery
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
@@ -366,11 +366,11 @@ We welcome contributions from the community! Please read our [Contributing Guide
 - Performance optimization
 - Cross-platform compatibility
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🏆 Team Members
+##  Team Members
 
 | Name | Role | ASU ID | Email |
 |------|------|--------|-------|
@@ -390,6 +390,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**⭐ Star this repository if you find it helpful!**
+** Star this repository if you find it helpful!**
 
 
